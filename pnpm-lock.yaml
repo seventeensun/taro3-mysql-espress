@@ -40,6 +40,7 @@ specifiers:
   jest-environment-jsdom: ^29.5.0
   lint-staged: ^15.0.2
   postcss: ^8.4.18
+  prettier: ^3.0.3
   react: ^18.0.0
   react-dom: ^18.0.0
   react-refresh: ^0.11.0
@@ -75,7 +76,7 @@ devDependencies:
   '@tarojs/cli': 3.6.18_svnxexokzgwwxr5tlfa4s6gvcy
   '@tarojs/taro-loader': 3.6.18_svnxexokzgwwxr5tlfa4s6gvcy
   '@tarojs/test-utils-react': 0.1.1_5nwhauhaqpc345oytdgjztctky
-  '@tarojs/webpack5-runner': 3.6.18_v7mkpouqxbrtrzxvitdzgt5y7e
+  '@tarojs/webpack5-runner': 3.6.18_26d6ct2xvnvjeoqqkza7ihxzum
   '@types/jest': 29.5.7
   '@types/node': 18.18.8
   '@types/react': 18.2.34
@@ -93,6 +94,7 @@ devDependencies:
   jest-environment-jsdom: 29.7.0
   lint-staged: 15.0.2
   postcss: 8.4.31
+  prettier: 3.0.3
   react-refresh: 0.11.0
   stylelint: 14.16.1
   ts-node: 10.9.1_dust6s46aatjy7uqjgtuomyf4q
@@ -2804,7 +2806,7 @@ packages:
       - vue
     dev: true
 
-  /@tarojs/webpack5-runner/3.6.18_v7mkpouqxbrtrzxvitdzgt5y7e:
+  /@tarojs/webpack5-runner/3.6.18_26d6ct2xvnvjeoqqkza7ihxzum:
     resolution: {integrity: sha512-BYt178vICazDRtNCXMZlmHq4EPWCkSfopIfMsyy/VgtU4Bc6ioRr5ebOxHaM9ACC79yqmtSZ6WUGFUF6XKEVcg==}
     peerDependencies:
       postcss: ^8.4.18
@@ -2867,7 +2869,7 @@ packages:
       terser-webpack-plugin: 5.3.9_rcrfwnoz6scihnuv67hgvlcgmm
       url-loader: 4.1.0_ru3cb5i24vrzz5gtyckmziay4a
       vm2: 3.9.19
-      vue-loader: 15.11.1_47jt3qtutpqglt4dr74vt7xxpi
+      vue-loader: 15.11.1_ots4elzswsoaqnpc7yx6vox74y
       webpack: 5.78.0
       webpack-chain: 6.5.1
       webpack-dev-server: 4.11.1_webpack@5.78.0
@@ -10871,6 +10873,12 @@ packages:
     dev: true
     optional: true
 
+  /prettier/3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /pretty-bytes/5.6.0:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
@@ -12987,7 +12995,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.11.1_47jt3qtutpqglt4dr74vt7xxpi:
+  /vue-loader/15.11.1_ots4elzswsoaqnpc7yx6vox74y:
     resolution: {integrity: sha512-0iw4VchYLePqJfJu9s62ACWUXeSqM30SQqlIftbYWM3C+jpPcEHKSPUZBLjSF9au4HTHQ/naF6OGnO3Q/qGR3Q==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
@@ -13010,6 +13018,7 @@ packages:
       css-loader: 6.8.1_webpack@5.78.0
       hash-sum: 1.0.2
       loader-utils: 1.4.2
+      prettier: 3.0.3
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
       webpack: 5.78.0

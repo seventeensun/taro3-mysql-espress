@@ -29,7 +29,8 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test": "jest",
     "lint": "eslint --ext .js,.tsx,.ts,.js src",
-    "lint:lint-staged": "lint-staged"
+    "lint:lint-staged": "pnpm run lint:prettier && lint-staged",
+    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\""
   },
   "browserslist": [
     "last 3 versions",
@@ -81,6 +82,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^15.0.2",
     "postcss": "^8.4.18",
+    "prettier": "^3.0.3",
     "react-refresh": "^0.11.0",
     "stylelint": "^14.4.0",
     "ts-node": "^10.9.1",
@@ -92,8 +94,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-	},
+  },
   "lint-staged": {
-    "*.{js,ts,tsx,jsx}": "eslint --cache"    
-	}
+    "*.{js,ts,tsx,jsx}": "eslint --cache"
+  }
 }
