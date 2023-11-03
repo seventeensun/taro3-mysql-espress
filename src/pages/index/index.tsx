@@ -14,8 +14,6 @@ export default function Index() {
     console.log('Page loaded.');
   });
 
-
-
   return (
     <View className="index">
       <Text>Hello world!</Text>

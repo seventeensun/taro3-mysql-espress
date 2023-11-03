@@ -29,7 +29,7 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test": "jest",
     "lint": "eslint --ext .js,.tsx,.ts,.js src",
-    "lint:lint-staged": "pnpm run lint:prettier && lint-staged",
+    "lint:lint-staged": "lint-staged",
     "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\""
   },
   "browserslist": [
