@@ -96,6 +96,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx,jsx}": "eslint --cache"
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write",
+      "eslint --max-warnings=0 --cache"
+    ]
   }
 }
