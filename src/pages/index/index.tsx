@@ -3,7 +3,7 @@
  * @author: 观者
  * @lastEditors: 观者
  * @Date: 2023-10-31 17:42:48
- * @LastEditTime: 2023-11-03 20:14:51
+ * @LastEditTime: 2023-11-03 20:38:55
  */
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
@@ -15,7 +15,6 @@ export default function Index() {
     console.log('Page loaded.')
   })
 
-  const a = '124';
 
   return (
     <View className="index">

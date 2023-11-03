@@ -1,6 +1,7 @@
 docs
 scripts
 .eslintcache
+node_modules
 
 # dependencies
 node_modules

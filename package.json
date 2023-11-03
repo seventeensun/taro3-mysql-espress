@@ -28,7 +28,8 @@
     "dev:jd": "npm run build:jd -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test": "jest",
-    "lint": "eslint --ext .js,.tsx,.ts,.js src"
+    "lint": "eslint --ext .js,.tsx,.ts,.js src",
+    "lint:lint-staged": "lint-staged"
   },
   "browserslist": [
     "last 3 versions",
@@ -91,8 +92,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
+	},
   "lint-staged": {
-    "*.{js,ts,tsx,jsx}": "eslint --cache"
-  }
+    "*.{js,ts,tsx,jsx}": "eslint --cache"    
+	}
 }
