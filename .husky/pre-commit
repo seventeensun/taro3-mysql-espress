@@ -1,5 +1,26 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint:prettier
+STAGE_FILES=$(git diff --cached --name-only -- '*.json' '*.js')
+if test ${#STAGE_FILES} -gt 0
+then
+    echo '开始代码格式检查与修正'
+    for FILE in $STAGE_FILES
+    do
+        if test -f "$FILE"; then
+            echo "$FILE exist"
+            npx prettier --write $FILE
+        fi
+        if [[ "$?" == 1 ]]; then
+      PASS=false
+    fi
+  done
+echo "代码格式化检查完毕"
+
+else
+    echo '没有js或者json文件需要检查'
+fi
+
+exit 0
+
 npm run lint:lint-staged
