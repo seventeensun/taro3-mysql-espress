@@ -2,8 +2,8 @@
  * @description:
  * @author: 观者
  * @lastEditors: 观者
- * @Date: 2023-10-31 17:42:48
- * @LastEditTime: 2023-11-05 13:19:32
+ * @Date: 2023-11-05 00:39:24
+ * @LastEditTime: 2023-11-05 13:39:42
  */
 import { View, Text } from '@tarojs/components';
 import { useLoad } from '@tarojs/taro';
@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <View className="index">
-      <Text>我是首页</Text>
+      <Text>我是订单页</Text>
     </View>
   );
 }
