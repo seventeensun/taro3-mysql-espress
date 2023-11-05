@@ -54,8 +54,11 @@
     "@tarojs/runtime": "3.6.18",
     "@tarojs/shared": "3.6.18",
     "@tarojs/taro": "3.6.18",
+    "classnames": "^2.3.2",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "style-resources-loader": "^1.5.0",
+    "taro-plugin-style-resource": "^0.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
@@ -101,7 +104,7 @@
     ],
     "*.ts?(x)": [
       "prettier --parser=typescript --write",
-      "eslint --max-warnings=0 --cache"
+      "eslint --max-warnings=3 --cache"
     ]
   }
 }

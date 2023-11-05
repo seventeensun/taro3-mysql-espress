@@ -4,11 +4,18 @@ import devConfig from './dev';
 import prodConfig from './prod';
 const path = require('path');
 
+const pluginOptions = {
+  less: {
+    patterns: [path.resolve(__dirname, '..', 'src/assets/styleSheet/variables.less')]
+  }
+};
+
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport = {
     projectName: 'myApp',
     date: '2023-10-31',
+    /** 设计稿默认 750PX */
     designWidth: 750,
     deviceRatio: {
       640: 2.34 / 2,
@@ -18,13 +25,16 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: [],
+    plugins: [['taro-plugin-style-resource', pluginOptions]],
     defineConstants: {},
     copy: {
       patterns: [],
       options: {}
     },
     framework: 'react',
+    sass: {
+      data: `@primaryColor: '#07c160';`
+    },
     compiler: 'webpack5',
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
@@ -93,7 +103,8 @@ export default defineConfig(async (merge, { command, mode }) => {
     alias: {
       '@/components': path.resolve(__dirname, '..', 'src/components'),
       '@/utils': path.resolve(__dirname, '..', 'src/utils'),
-      '@/assets': path.resolve(__dirname, '..', 'src/assets')
+      '@/assets': path.resolve(__dirname, '..', 'src/assets'),
+      '@/constants': path.resolve(__dirname, '..', 'src/constants')
     }
   };
   if (process.env.NODE_ENV === 'development') {
