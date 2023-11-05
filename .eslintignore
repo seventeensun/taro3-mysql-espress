@@ -1,10 +1,13 @@
 docs
 scripts
 .eslintcache
-node_modules
+config/*
+**/config/*
 
 # dependencies
-node_modules
+/node_modules/*
+**/node_modules/*
+
 npm-debug.log*
 yarn-error.log
 yarn.lock
