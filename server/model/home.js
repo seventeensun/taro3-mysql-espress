@@ -3,33 +3,48 @@
  * @author: 观者
  * @lastEditors: 观者
  * @Date: 2023-11-26 07:27:29
- * @LastEditTime: 2023-11-27 12:54:27
+ * @LastEditTime: 2023-11-27 13:13:31
  */
 const express = require('express');
 const { sqlQuery, resCallback } = require('../mysql');
+const { SQLS } = require('../constants');
+
 const router = express.Router();
 
-const SQL = {
-  create_table: () => `
-        create table if not exists banner_table (
-            id int auto_increment,
-            img_url char(255) not null,
-            primary key (id)
-        ) engine=innodb
-    `, // auto_increment: 自动增量插入数据
+router.get('/banner', async (req, res) => {
+  try {
+    const data = await sqlQuery(SQLS.q_banner);
+    console.log(data, 'data');
+    const result = resCallback[200](data);
 
-  insert: img_url => `
-        INSERT INTO banner_table(
-            id,
-            img_url
-        ) VALUES(
-            NULL,
-            '${img_url}'
-        )
-    `,
+    res.send(result);
+  } catch (error) {
+    const data = resCallback[-100](error);
+    console.log(data, 'data');
+  }
+});
 
-  query: () => 'SELECT * FROM banner_table'
-};
+module.exports = router;
+
+// const SQL = {
+//     create_table: () => `
+//         create table if not exists banner_table (
+//             id int auto_increment,
+//             img_url char(255) not null,
+//             primary key (id)
+//         ) engine=innodb
+//     `, // auto_increment: 自动增量插入数据
+
+//     insert: img_url => `
+//         INSERT INTO banner_table(
+//             id,
+//             img_url
+//         ) VALUES(
+//             NULL,
+//             '${img_url}'
+//         )
+//     `,
+// };
 
 /** 创建表并初始化数据 */
 // const createTable = async () => {
@@ -51,23 +66,3 @@ const SQL = {
 // };
 
 // createTable();
-
-// sqlQuery(SQL.query()).then(res => {
-//     console.log(res)
-// }).catch(e => {
-//     console.log(e, 'e')
-// })
-/** 查询表返回 bannerList */
-router.get('/banner', async (req, res) => {
-  try {
-    const data = await sqlQuery(SQL.query());
-    const result = resCallback[200](data);
-
-    res.send(result);
-  } catch (error) {
-    const data = resCallback[-100](error);
-    console.log(data, 'data');
-  }
-});
-
-module.exports = router;
